@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InforceTask", "InforceTask\InforceTask.csproj", "{F57A79AB-E1F6-4625-887C-BC61EC1D46E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{98F09B3D-B16E-478F-888E-C73FE1302B32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{1B8107FE-DDDC-4CEF-8BDA-21D5201453EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F57A79AB-E1F6-4625-887C-BC61EC1D46E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57A79AB-E1F6-4625-887C-BC61EC1D46E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57A79AB-E1F6-4625-887C-BC61EC1D46E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98F09B3D-B16E-478F-888E-C73FE1302B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98F09B3D-B16E-478F-888E-C73FE1302B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98F09B3D-B16E-478F-888E-C73FE1302B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98F09B3D-B16E-478F-888E-C73FE1302B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8107FE-DDDC-4CEF-8BDA-21D5201453EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8107FE-DDDC-4CEF-8BDA-21D5201453EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8107FE-DDDC-4CEF-8BDA-21D5201453EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8107FE-DDDC-4CEF-8BDA-21D5201453EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
