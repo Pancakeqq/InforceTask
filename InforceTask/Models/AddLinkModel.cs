@@ -5,7 +5,6 @@ namespace InforceTask.Models
     public class AddLinkModel
     {
         [Required]
-        [DataType(DataType.Url)]
         public string LongLink { get; set; }
         public string ShortLink { get; set; }
 

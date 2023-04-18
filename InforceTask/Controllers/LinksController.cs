@@ -39,11 +39,7 @@ namespace InforceTask.Controllers
                 Model.ErrorMessage = "Such Url exists";
                 return View(Model);
             }
-            if (!ModelState.IsValid)
-            {
-                Model.ErrorMessage = "Url is not valid";
-                return View(Model);
-            }
+
             var id = Guid.NewGuid();
             var link = new Link
             {
