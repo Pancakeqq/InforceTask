@@ -10,7 +10,6 @@ namespace InforceTask.DAL
         public LinksDbContext(DbContextOptions<LinksDbContext> options) : base(options)
         { }
 
-        public DbSet<User> Users {get; set;}
         public DbSet<Link> Links { get; set; }
 
     }

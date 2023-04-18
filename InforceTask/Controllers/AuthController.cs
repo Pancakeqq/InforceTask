@@ -9,7 +9,6 @@ namespace InforceTask.Controllers
     [AllowAnonymous]
     public class AuthController : Controller
     {
-        public LoginModel Model { get; set; }
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -24,7 +23,7 @@ namespace InforceTask.Controllers
         [HttpGet]
         public async Task<IActionResult> Register()
         {
-            return View(Model);
+            return View();
         }
 
         [HttpPost]

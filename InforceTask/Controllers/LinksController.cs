@@ -10,18 +10,18 @@ namespace InforceTask.Controllers
     [AllowAnonymous]
     public class LinksController : Controller
     {
-        private readonly LinksDbContext _baseContext;
+        private readonly LinksDbContext _linksDbContext;
 
         public LinksController(LinksDbContext baseContext)
         {
-            _baseContext = baseContext;
+            _linksDbContext = baseContext;
         }
 
 
 
         [HttpGet]
         public async Task<IActionResult> Links() {
-            var links = await _baseContext.Links.ToListAsync();
+            var links = await _linksDbContext.Links.ToListAsync();
 
             var Model = new AddLinkModel { Links = links };
             
@@ -31,7 +31,7 @@ namespace InforceTask.Controllers
         public async Task<IActionResult> Links(AddLinkModel model)
         {
 
-            var links = await _baseContext.Links.ToListAsync();
+            var links = await _linksDbContext.Links.ToListAsync();
             var Model = new AddLinkModel { Links = links };
 
             if (links.Any(i => i.LongLink.Equals(model.LongLink)))
@@ -54,15 +54,15 @@ namespace InforceTask.Controllers
                 CreatedDate = DateTime.Now,
             };
 
-            await _baseContext.Links.AddAsync(link);
-            await _baseContext.SaveChangesAsync();
+            await _linksDbContext.Links.AddAsync(link);
+            await _linksDbContext.SaveChangesAsync();
             return RedirectToAction("Links");
         }
 
         [HttpGet]
         public async Task<IActionResult> Redirector(string id)
         {
-            var links = await _baseContext.Links.ToListAsync();
+            var links = await _linksDbContext.Links.ToListAsync();
 
             var point = links.Where(i => i.ID.ToString().Substring(0, 6).Equals(id)).First();
 
@@ -73,16 +73,16 @@ namespace InforceTask.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
-            var linkToDelete =  _baseContext.Links.Where(i => i.ID.ToString().Equals(id)).First();
-            _baseContext.Links.Remove(linkToDelete);
-            await _baseContext.SaveChangesAsync();
+            var linkToDelete =  _linksDbContext.Links.Where(i => i.ID.ToString().Equals(id)).First();
+            _linksDbContext.Links.Remove(linkToDelete);
+            await _linksDbContext.SaveChangesAsync();
             return RedirectToAction("Links");
         }
 
         [HttpGet]
         public async Task<IActionResult> Info(string id)
         {
-            var linkToDelete = _baseContext.Links.Where(i => i.ID.ToString().Equals(id)).First();
+            var linkToDelete = _linksDbContext.Links.Where(i => i.ID.ToString().Equals(id)).First();
             return View(linkToDelete);
             
         }
