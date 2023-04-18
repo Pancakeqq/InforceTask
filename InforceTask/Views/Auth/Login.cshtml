@@ -1,0 +1,28 @@
+﻿
+@model InforceTask.Models.LoginModel
+@{
+}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+            <h1>Login</h1>
+
+
+        <form method="post">
+            <div class="text-danger">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label" >Login</label>
+                <input type="text" asp-for="Login" class="form-control">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Password</label>
+                <input type="text" asp-for="Password" class="form-control">
+            </div>
+            <div class="mb-3 ">
+                <button type = "submit" class="btn btn-primary">Log in</button>
+            </div>
+        </form>
+    </div>
+</div>

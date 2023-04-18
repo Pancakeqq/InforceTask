@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model InforceTask.Models.AddLinkModel
+@{
+}
+
+
+<h1>Links</h1>
+
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Full link</th>
+        <th>Shortened link</th>
+        <th>Options</th>
+    </thead>
+    <tbody>
+        @foreach(var link in Model.Links)
+        {
+            <tr>
+                <td>
+                    @link.ID 
+                </td>
+                <td>
+                    @link.LongLink
+                </td>
+                <td>
+                    <a href=@link.ShortLink>@link.ShortLink</a>
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User) ){
+                        @if (User.IsInRole("Administrator") || User.Identity.Name.Equals(link.CreatedBy))
+                        {
+                            <a href="Delete/@link.ID">Del</a>
+                        }
+                        <a href="Info/@link.ID">Info</a>
+                    }
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form method="post" action="Links">
+        <div class = "mb-3">
+            <label for ="" class="form-label">Your link</label>
+            <input type="text" class="form-control" asp-for="LongLink" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+@if  (Model.ErrorMessage != null )
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+
+}
+
